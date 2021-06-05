@@ -38,7 +38,6 @@ function createQuestionInner(title, question){
   });
 
   childrens.push(h3, questionElement);
-  console.log(childrens)
   return childrens;
 }
 
