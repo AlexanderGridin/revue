@@ -1,24 +1,21 @@
-.card:not(:first-child){
-  display: none;
-}
-
-.card > div + div
-{
-  margin-top: 15px;
-}
-
 .card
 {
   border: 5px solid #ddd;
   padding: 25px;
+
+  & > div + div
+  {
+    margin-top: 15px;
+  }
+
+  &.correct
+  {
+    border: 5px solid #17A05D;
+  }
+
+  &.error
+  {
+    border: 5px solid #DD4F43;
+  }
 }
 
-.card.correct
-{
-  border: 5px solid #17A05D;
-}
-
-.card.error
-{
-  border: 5px solid #DD4F43;
-}

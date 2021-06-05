@@ -1,0 +1,10 @@
+.questions-list
+{
+  padding: 0;
+  list-style: none;
+
+  & > li:not(:first-child)
+  {
+    display: none;
+  }
+}

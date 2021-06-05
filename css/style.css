@@ -1,3 +1,59 @@
+:root {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1.3;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/email-pattern.png");
+  background-position: center;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: none;
+}
+
+.header {
+  background: #24ACF2;
+  color: #FFF;
+}
+
+.page-title {
+  margin: 0;
+  text-align: center;
+  padding: 25px;
+}
+
+.earned-moneys {
+  margin: 25px;
+  padding: 15px;
+  background: #13965A;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.earned-moneys .label {
+  margin-right: 7px;
+}
+
+.board,
+#revue-app {
+  margin: 100px;
+  text-align: center;
+  background: #FFF;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
 .button {
   border: none;
   border-radius: 0;
@@ -25,17 +81,13 @@
   background: #DD4F43;
 }
 
-.card:not(:first-child) {
-  display: none;
+.card {
+  border: 5px solid #ddd;
+  padding: 25px;
 }
 
 .card > div + div {
   margin-top: 15px;
-}
-
-.card {
-  border: 5px solid #ddd;
-  padding: 25px;
 }
 
 .card.correct {
@@ -44,5 +96,20 @@
 
 .card.error {
   border: 5px solid #DD4F43;
+}
+
+.actions {
+  padding: 0;
+  list-style-type: upper-alpha;
+  list-style-position: inside;
+}
+
+.questions-list {
+  padding: 0;
+  list-style: none;
+}
+
+.questions-list > li:not(:first-child) {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

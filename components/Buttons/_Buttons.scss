@@ -10,20 +10,20 @@
   transition: 0.4s;
   display: inline-block;
   width: 90%;
-}
 
-.button:hover
-{
-  background: #FFCD40;
-  cursor: pointer;
-}
+  &:hover
+  {
+    background: #FFCD40;
+    cursor: pointer;
+  }
 
-.button.correct
-{
-  background: #17A05D;
-}
+  &.correct
+  {
+    background: #17A05D;
+  }
 
-.button.error
-{
-  background: #DD4F43;
+  &.error
+  {
+    background: #DD4F43;
+  }
 }
