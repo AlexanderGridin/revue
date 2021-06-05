@@ -23,20 +23,24 @@ const ReVue = {
     return element;
   },
 
-  build(rootComponent){
+  build(components){
     let app = document.querySelector('#revue-app');
 
-    // app.append(mergeComponents(rootComponent));
-
-    if(app && rootComponent){
-      app.append(rootComponent);
+    if(app && components && components.length > 0){
+      for(let component of components){
+        app.append(mergeComponents(component));
+      }
     }
+
+    // if(app && rootComponent){
+    //   app.append(rootComponent);
+    // }
   }
 }
 
 function mergeComponents(parent){
-  if(!parent.childrens[0].childrens){
-    parent.element.append(parent.childrens[0]);
+  if(!parent.childrens.length === 0){
+    // parent.element.append(parent.childrens[0]);
     return parent.element;
   }
 

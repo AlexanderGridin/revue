@@ -1,18 +1,40 @@
 import ReVue from './ReVue.js';
 
 class Component{
-  constructor(component){
+  constructor(props){
     this.name = null;
-    this.type = component.type;
-    this.props = component.props;
+    this.type = null;
+    this.attributes = null;
+    this.props = props;
     this.element = null;
-    this.childrens = null;
+    this.childrens = [];
     this.eventListeners = null;
+    this.parent = null;
   }
 
-  setChildrens(...childrens){
-    this.childrens = childrens;
-    return this;
+  // setChildrens(...childrens){
+  //   this.childrens = childrens;
+  //   return this;
+  // }
+
+  init(data){
+    this.type = data.type;
+    this.attributes = data.attributes;
+    this.childrens = data.childrens ? data.childrens : [];
+
+    this.setChildrens(this.childrens);
+    this.build();
+  }
+
+  setChildrens(childrens){
+    if(childrens.length > 0){
+      for(let child of childrens){
+        child.parent = this;
+      }
+    }
+    // childrens.forEach((child) => {
+    //   child.parent = this;
+    // });
   }
 
   setEventListeners(eventListeners){
@@ -20,16 +42,19 @@ class Component{
     return this;
   }
 
-  build(name){
-    this.element = document.createElement(this.type);
-    this.name = name;
+  setProperties(props){
+    this.props = props;
+  }
 
-    handleElementProps(this.element, this.props);
-    handleElementChildrens(this.element, this.childrens);
+  build(){
+    this.element = document.createElement(this.type);
+
+    handleElementAttributes(this.element, this.attributes);
+    // handleElementChildrens(this.element, this.childrens);
     handleElementEventListeners(this.element, this.eventListeners);
 
     ReVue.components.push(this);
-    return this.element;
+    return this;
   }
 
   sayHi(){
@@ -38,17 +63,28 @@ class Component{
   }
 }
 
-function handleElementProps(element, props){
-  for(let p in props){
-    switch(p){
+function handleElementAttributes(element, attributes){
+  for(let attrName in attributes){
+    switch(attrName){
       case 'classNames':
-        let classNames = props[p].split(' ');
+        let classNames = attributes[attrName].split(' ');
         
         classNames.forEach((name) => {
           element.classList.add(name);
         });
 
         break;
+
+      case 'innerText':
+        element.innerText = attributes[attrName];
+        break;
+
+      case 'innerHTML':
+        element.innerHTML = attributes[attrName];
+        break;
+
+      default:
+        element.setAttribute(attrName, attributes[attrName]);
     }
   }
 }
@@ -67,6 +103,7 @@ function handleElementChildrens(element, childrens){
       if(typeof children === 'string'){
         element.innerHTML = children;
       } else {
+        children.parent = element;
         element.append(children);
       }
     });

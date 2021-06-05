@@ -1,1 +1,48 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.button {
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  background: #ddd;
+  font-size: 1rem;
+  margin: 5px;
+  padding: 7px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: inline-block;
+  width: 90%;
+}
+
+.button:hover {
+  background: #FFCD40;
+  cursor: pointer;
+}
+
+.button.correct {
+  background: #17A05D;
+}
+
+.button.error {
+  background: #DD4F43;
+}
+
+.card:not(:first-child) {
+  display: none;
+}
+
+.card > div + div {
+  margin-top: 15px;
+}
+
+.card {
+  border: 5px solid #ddd;
+  padding: 25px;
+}
+
+.card.correct {
+  border: 5px solid #17A05D;
+}
+
+.card.error {
+  border: 5px solid #DD4F43;
+}
+/*# sourceMappingURL=style.css.map */

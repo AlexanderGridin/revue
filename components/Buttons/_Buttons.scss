@@ -1,6 +1,29 @@
-.btn
+.button
 {
-  // border: 2px solid red !important;
-  // color: orange !important;
-  // background: red !important;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  background: #ddd;
+  font-size: 1rem;
+  margin: 5px;
+  padding: 7px;
+  transition: 0.4s;
+  display: inline-block;
+  width: 90%;
+}
+
+.button:hover
+{
+  background: #FFCD40;
+  cursor: pointer;
+}
+
+.button.correct
+{
+  background: #17A05D;
+}
+
+.button.error
+{
+  background: #DD4F43;
 }

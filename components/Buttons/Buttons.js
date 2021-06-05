@@ -1,28 +1,17 @@
 import Component from '../../ReVue/Component.js';
-import ReVue from '../../ReVue/ReVue.js';
 
-let ButtonPrimary = new Component({
-  type: 'button',
-  props: {
-    classNames: 'btn btn-primary',
-    type: 'button'
-  },
-});
+class ButtonPrimary extends Component{
+  constructor(props){
+    super(props);
 
-let ButtonSecondary = new Component({
-  type: 'button',
-  props: {
-    classNames: 'btn btn-secondary',
-    type: 'button'
-  },
-});
-
-let ButtonsWrapper = new Component({
-  type: 'div',
-  props: {
-    classNames: 'buttons-wrapper'
+    this.type = 'button';
+    this.attributes = {
+      type: 'button',
+      classNames: 'button',
+      innerText: props.text
+    };
+    this.build();
   }
-});
+}
 
-
-export {ButtonsWrapper, ButtonPrimary, ButtonSecondary};
+export default ButtonPrimary;

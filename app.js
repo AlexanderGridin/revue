@@ -1,42 +1,24 @@
 import ReVue from './ReVue/ReVue.js';
-import {ButtonsWrapper, ButtonPrimary, ButtonSecondary} from './components/Buttons/Buttons.js';
 import data from './data.js';
 
-console.log(data)
+import Card from './components/Card/Card.js';
 
 ReVue.sayHello();
 
-let buttonPrimary = ButtonPrimary
-  .setChildrens('Тестовая кнопка')
-  .setEventListeners({
-    click: buttonPrimaryClick
-  })
-  .build('buttonPrimary');
+let questions = [];
 
-let buttonPrimary2 = ButtonPrimary
-  .setChildrens('Тестовая кнопка 3')
-  .setEventListeners({
-    click: buttonPrimaryClick
-  })
-  .build('buttonPrimary2');
+data.forEach((dataItem, i) => {
+  questions.push(new Card({
+    answers: dataItem.answers,
+    question: dataItem.question,
+    correctAnswer: dataItem.correctAnswer,
+    number: i+1,
+  }));
+});
 
-let buttonSecondary = ButtonSecondary
-  .setChildrens('Тестовая кнопка2')
-  .build('buttonSecondary');
+ReVue.build(questions);
 
-let buttonsWrapper = ButtonsWrapper
-  .setChildrens(buttonPrimary, buttonSecondary, buttonPrimary2)
-  .build('buttonsWrapper');
+// console.log(ReVue.components)
+// console.log(build);
+console.log(data);
 
-  
-ReVue.build(buttonsWrapper);
-console.log(ReVue.components);
-
-function buttonPrimaryClick(){
-  let buttonSecondary = ReVue.getComponentByName('buttonSecondary');
-  buttonSecondary.element.style.border = '3px solid red';
-  console.log(buttonSecondary.element);
-
-  let buttonPrimary2 = ReVue.getComponentByName('buttonPrimary2');
-  buttonPrimary2.element.style.border = '3px solid red';
-}

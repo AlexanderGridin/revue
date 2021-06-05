@@ -55,62 +55,10 @@ body
   box-shadow: 0 0 20px rgba(0,0,0,0.2)
 }
 
-.card:not(:first-child){
-  display: none;
-}
 
-.card > div + div
-{
-  margin-top: 15px;
-}
 
-.card
-{
-  border: 5px solid #ddd;
-  padding: 25px;
-}
-
-.card.correct
-{
-  border: 5px solid #17A05D;
-}
-
-.card.error
-{
-  border: 5px solid #DD4F43;
-}
-
-.card button
-{
-  border: none;
-  border-radius: 0;
-  font-family: inherit;
-  background: #ddd;
-  font-size: 1rem;
-  margin: 5px;
-  padding: 7px;
-  transition: 0.4s;
-  display: inline-block;
-  width: 90%;
-}
-
-.card button:hover
-{
-  background: #FFCD40;
-  cursor: pointer;
-}
-
-.card button.correct
-{
-  background: #17A05D;
-}
-
-.card button.error
-{
-  background: #DD4F43;
-}
-
-.answers
+.answers,
+.actions
 {
   padding: 0;
   list-style-type: upper-alpha;
