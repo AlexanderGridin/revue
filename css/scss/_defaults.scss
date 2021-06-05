@@ -16,19 +16,6 @@ body
   background: none;
 }
 
-.header
-{
-  background: #24ACF2;
-  color: #FFF;
-}
-
-.page-title
-{
-  margin: 0;
-  text-align: center;
-  padding: 25px;
-}
-
 .earned-moneys
 {
   margin: 25px;
@@ -44,13 +31,4 @@ body
 .earned-moneys .label
 {
   margin-right: 7px;
-}
-
-.board,
-#revue-app
-{
-  margin: 100px;
-  text-align: center;
-  background: #FFF;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2)
 }

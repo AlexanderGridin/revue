@@ -15,17 +15,6 @@ body {
   background: none;
 }
 
-.header {
-  background: #24ACF2;
-  color: #FFF;
-}
-
-.page-title {
-  margin: 0;
-  text-align: center;
-  padding: 25px;
-}
-
 .earned-moneys {
   margin: 25px;
   padding: 15px;
@@ -45,13 +34,15 @@ body {
   margin-right: 7px;
 }
 
-.board,
-#revue-app {
-  margin: 100px;
+.header {
+  background: #24ACF2;
+  color: #FFF;
+}
+
+.header .page-title {
+  margin: 0;
   text-align: center;
-  background: #FFF;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 25px;
 }
 
 .button {
@@ -107,6 +98,11 @@ body {
 .questions-list {
   padding: 0;
   list-style: none;
+  margin: 100px;
+  text-align: center;
+  background: #FFF;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .questions-list > li:not(:first-child) {

@@ -10,6 +10,13 @@ class ButtonPrimary extends Component{
       classNames: 'button',
       innerText: props.text
     };
+    this.eventListeners = {
+      click: function(){
+        console.log(this.textContent);
+        this.parentElement.parentElement.parentElement.parentElement.remove();
+      }
+    };
+
     this.build();
   }
 }
